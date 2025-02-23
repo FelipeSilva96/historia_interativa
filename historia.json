@@ -6,12 +6,12 @@
     },
     {
         "titulo": "O Grande Desafio",
-        "imagem": "https://source.unsplash.com/600x400/?mountain",
+        "imagem": "https://github.com/FelipeSilva96/historia_interativa/blob/main/desafio2.jpg?raw=true",
         "texto": "Diante dele, uma montanha imensa bloqueia o caminho. Ele precisa escalar."
     },
     {
         "titulo": "A Vitória",
-        "imagem": "https://source.unsplash.com/600x400/?sunset",
+        "imagem": "https://github.com/FelipeSilva96/historia_interativa/blob/main/vitoria.jpg?raw=true",
         "texto": "Após muitos desafios, ele contempla o pôr do sol no topo, sentindo-se vitorioso."
     }
 ]
