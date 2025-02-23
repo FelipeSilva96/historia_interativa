@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História Interativa</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        img { max-width: 100%; height: auto; }
+        .container { max-width: 500px; margin: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="titulo">Carregando...</h2>
+        <img id="imagem" src="" alt="">
+        <p id="texto">Aguarde...</p>
+        <button onclick="proximaTela()">Próximo</button>
+        <br>
+        <input type="text" id="servidor" placeholder="URL do servidor">
+        <button onclick="carregarDados()">Carregar</button>
+    </div>
+
+    <script>
+        let historia = [];
+        let indice = 0;
+
+        function carregarDados() {
+            const url = document.getElementById('servidor').value;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    historia = data;
+                    indice = 0;
+                    mostrarTela();
+                })
+                .catch(error => alert("Erro ao carregar os dados: " + error));
+        }
+
+        function mostrarTela() {
+            if (historia.length > 0 && indice < historia.length) {
+                document.getElementById("titulo").innerText = historia[indice].titulo;
+                document.getElementById("imagem").src = historia[indice].imagem;
+                document.getElementById("texto").innerText = historia[indice].texto;
+            }
+        }
+
+        function proximaTela() {
+            if (indice < historia.length - 1) {
+                indice++;
+                mostrarTela();
+            }
+        }
+    </script>
+</body>
+</html>
